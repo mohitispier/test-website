@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile – ReddrPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    :root{--orange:#ff4500;--orange-light:#fff4f0;--text:#111111;--muted:#6b6b6b;--border:#e8e5e0;--bg:#ffffff;--bg2:#f9f8f6;--radius:12px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:var(--bg2);font-size:14px}
+    .dashboard{display:flex;min-height:100vh}
+    .sidebar{width:260px;background:var(--text);padding:24px 16px;position:fixed;height:100vh;overflow-y:auto}
+    .sidebar-logo{color:#fff;font-size:22px;font-weight:900;margin-bottom:32px;display:block}
+    .sidebar-logo span{color:var(--orange)}
+    .nav-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;text-decoration:none;margin-bottom:4px;transition:all .2s}
+    .nav-item:hover,.nav-item.active{background:rgba(255,255,255,0.1);color:#fff}
+    .nav-item.active{background:var(--orange)}
+    .nav-icon{width:20px;text-align:center}
+    .sidebar-section{color:rgba(255,255,255,0.4);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:24px 0 12px;padding:0 16px}
+    .main{margin-left:260px;flex:1;padding:24px 32px}
+    .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+    .header h1{font-size:24px;font-weight:700}
+    .header-right{display:flex;align-items:center;gap:16px}
+    .notification-btn{width:40px;height:40px;border-radius:10px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative}
+    .notification-btn::after{content:'';position:absolute;top:8px;right:8px;width:8px;height:8px;background:var(--orange);border-radius:50%}
+    .user-menu{display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:10px;cursor:pointer}
+    .user-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#ff8c42);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+    .profile-section{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-bottom:24px}
+    .profile-header{display:flex;align-items:center;gap:24px;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+    .profile-avatar{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#ff8c42);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:#fff;flex-shrink:0}
+    .profile-info h2{font-size:24px;margin-bottom:4px}
+    .profile-info p{color:var(--muted)}
+    .profile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .form-group{margin-bottom:20px}
+    .form-label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+    .form-input{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;transition:border-color .2s}
+    .form-input:focus{outline:none;border-color:var(--orange)}
+    .form-input:disabled{background:var(--bg2);color:var(--muted)}
+    .save-btn{background:var(--orange);color:#fff;padding:14px 28px;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s}
+    .save-btn:hover{opacity:.88}
+    .danger-btn{background:transparent;border:1.5px solid #e55;color:#e55;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer}
+    .danger-btn:hover{background:#fef2f2}
+    .settings-section{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-bottom:24px}
+    .settings-section h3{font-size:18px;margin-bottom:20px}
+    .setting-item{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border)}
+    .setting-item:last-child{border-bottom:none}
+    .setting-info h4{font-size:15px;margin-bottom:4px}
+    .setting-info p{font-size:13px;color:var(--muted)}
+    .toggle{width:50px;height:28px;background:var(--border);border-radius:100px;position:relative;cursor:pointer;transition:background .2s}
+    .toggle::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;background:#fff;border-radius:50%;transition:transform .2s}
+    .toggle.active{background:var(--orange)}
+    .toggle.active::after{transform:translateX(22px)}
+    .danger-zone{border-color:#fecaca;background:#fef2f2}
+    .danger-zone h3{color:#e55}
+    @media(max-width:900px){.sidebar{display:none}.main{margin-left:0;padding:20px}.profile-header{flex-direction:text-align:center}.profile-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<div class="dashboard">
+  <aside class="sidebar">
+    <a href="index.html" class="sidebar-logo">Reddr<span>Pulse</span></a>
+
+    <nav>
+      <a href="dashboard.html" class="nav-item">
+        <span class="nav-icon">📊</span> Dashboard
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🎯</span> Opportunities
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">💬</span> Comments
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📈</span> Analytics
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">👥</span> Accounts
+      </a>
+
+      <div class="sidebar-section">Settings</div>
+      <a href="profile.html" class="nav-item active">
+        <span class="nav-icon">👤</span> Profile
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">⚙️</span> Preferences
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🔗</span> Integrations
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">💳</span> Billing
+      </a>
+
+      <div class="sidebar-section">Support</div>
+      <a href="contact.html" class="nav-item">
+        <span class="nav-icon">💬</span> Contact Us
+      </a>
+
+      <a href="#" class="nav-item" onclick="signOut()" style="margin-top:40px">
+        <span class="nav-icon">🚪</span> Sign Out
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="header">
+      <h1>Profile Settings</h1>
+      <div class="header-right">
+        <button class="notification-btn">🔔</button>
+        <div class="user-menu">
+          <div class="user-avatar" id="userAvatar">JD</div>
+          <span id="userName">John Doe</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Information -->
+    <div class="profile-section">
+      <div class="profile-header">
+        <div class="profile-avatar" id="profileAvatar">JD</div>
+        <div class="profile-info">
+          <h2 id="displayName">John Doe</h2>
+          <p id="displayEmail">john@company.com</p>
+          <p style="font-size:13px;color:var(--muted);margin-top:8px">Member since January 2026</p>
+        </div>
+      </div>
+
+      <form id="profileForm">
+        <div class="profile-grid">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" id="fullName" placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" id="email" disabled>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Company Name</label>
+            <input type="text" class="form-input" id="companyName" placeholder="Your Company">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Website</label>
+            <input type="url" class="form-input" id="website" placeholder="https://yoursite.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Job Title</label>
+            <input type="text" class="form-input" id="jobTitle" placeholder="Marketing Manager">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" id="phone" placeholder="+1 (555) 123-4567">
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:24px">
+          <button type="submit" class="save-btn">Save Changes</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Notification Settings -->
+    <div class="settings-section">
+      <h3>🔔 Notification Settings</h3>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>Email Notifications</h4>
+          <p>Receive weekly reports and important updates</p>
+        </div>
+        <div class="toggle active" onclick="this.classList.toggle('active')"></div>
+      </div>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>Brand Mentions</h4>
+          <p>Get notified when your brand is mentioned</p>
+        </div>
+        <div class="toggle active" onclick="this.classList.toggle('active')"></div>
+      </div>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>New Opportunities</h4>
+          <p>Alerts for new Reddit opportunities in your niche</p>
+        </div>
+        <div class="toggle active" onclick="this.classList.toggle('active')"></div>
+      </div>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>Weekly Summary</h4>
+          <p>Receive a weekly performance summary</p>
+        </div>
+        <div class="toggle" onclick="this.classList.toggle('active')"></div>
+      </div>
+    </div>
+
+    <!-- Security Settings -->
+    <div class="settings-section">
+      <h3>🔒 Security</h3>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>Change Password</h4>
+          <p>Update your account password</p>
+        </div>
+        <button class="btn btn-outline" style="padding:10px 20px">Change</button>
+      </div>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>Two-Factor Authentication</h4>
+          <p>Add an extra layer of security</p>
+        </div>
+        <button class="btn btn-outline" style="padding:10px 20px">Enable</button>
+      </div>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>Active Sessions</h4>
+          <p>Manage your active login sessions</p>
+        </div>
+        <button class="btn btn-outline" style="padding:10px 20px">View</button>
+      </div>
+    </div>
+
+    <!-- Danger Zone -->
+    <div class="settings-section danger-zone">
+      <h3>⚠️ Danger Zone</h3>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>Delete Account</h4>
+          <p>Permanently delete your account and all data</p>
+        </div>
+        <button class="danger-btn">Delete Account</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // Supabase configuration
+  const SUPABASE_URL = 'https://nuvwputudglrlzkizwqw.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_7fMgT0rUKLkVZWmiXg7Cmw_7E_rR0KV';
+
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  // Load user profile data
+  async function loadProfile() {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+
+      if (user) {
+        const metadata = user.user_metadata || {};
+
+        document.getElementById('fullName').value = metadata.full_name || '';
+        document.getElementById('email').value = user.email || '';
+        document.getElementById('companyName').value = metadata.company_name || '';
+        document.getElementById('website').value = metadata.website || '';
+        document.getElementById('jobTitle').value = metadata.job_title || '';
+        document.getElementById('phone').value = metadata.phone || '';
+
+        // Update display
+        const name = metadata.full_name || 'User';
+        document.getElementById('displayName').textContent = name;
+        document.getElementById('displayEmail').textContent = user.email;
+        document.getElementById('userName').textContent = name;
+        document.getElementById('userAvatar').textContent = getInitials(name);
+        document.getElementById('profileAvatar').textContent = getInitials(name);
+      }
+    } catch (error) {
+      console.error('Error loading profile:', error);
+    }
+  }
+
+  function getInitials(name) {
+    return name
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  }
+
+  // Save profile
+  document.getElementById('profileForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const updates = {
+      full_name: document.getElementById('fullName').value,
+      company_name: document.getElementById('companyName').value,
+      website: document.getElementById('website').value,
+      job_title: document.getElementById('jobTitle').value,
+      phone: document.getElementById('phone').value
+    };
+
+    try {
+      const { data, error } = await supabase.auth.updateUser({
+        data: updates
+      });
+
+      if (error) throw error;
+
+      // Update display
+      const name = updates.full_name || 'User';
+      document.getElementById('displayName').textContent = name;
+      document.getElementById('userName').textContent = name;
+      document.getElementById('userAvatar').textContent = getInitials(name);
+      document.getElementById('profileAvatar').textContent = getInitials(name);
+
+      showToast('Profile updated successfully!', 'success');
+    } catch (error) {
+      showToast('Error updating profile: ' + error.message, 'error');
+    }
+  });
+
+  // Sign out
+  async function signOut() {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      window.location.href = 'login.html';
+    } catch (error) {
+      console.error('Sign out error:', error);
+    }
+  }
+
+  // Toast notification
+  function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 14px 20px;
+      background: ${type === 'success' ? '#2d9d6a' : '#e55'};
+      color: white;
+      border-radius: 10px;
+      font-weight: 500;
+      z-index: 10000;
+      animation: slideUp 0.3s ease;
+    `;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+
+  // Check auth on load
+  async function checkAuth() {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        window.location.href = 'login.html';
+        return;
+      }
+      loadProfile();
+    } catch (error) {
+      console.error('Auth check error:', error);
+      window.location.href = 'login.html';
+    }
+  }
+
+  checkAuth();
+</script>
+
+</body>
+</html>
