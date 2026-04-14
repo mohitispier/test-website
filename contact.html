@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – ReddrPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header{padding:80px 0 60px;background:var(--bg2);text-align:center}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;margin-top:48px}
+    .contact-info h3{font-size:22px;margin-bottom:20px}
+    .contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px}
+    .contact-icon{width:48px;height:48px;border-radius:10px;background:var(--orange-light);border:1px solid rgba(255,69,0,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .contact-label{font-size:14px;font-weight:600;margin-bottom:4px}
+    .contact-value{font-size:14px;color:var(--muted)}
+    .contact-form{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:40px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .form-group{margin-bottom:20px}
+    .form-label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+    .form-input{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;transition:border-color .2s}
+    .form-input:focus{outline:none;border-color:var(--orange)}
+    textarea.form-input{min-height:140px;resize:vertical}
+    .faq-section{padding:80px 0;background:var(--bg2);border-top:1px solid var(--border)}
+    .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
+    .faq-item{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+    .faq-item h4{font-size:16px;margin-bottom:8px}
+    .faq-item p{font-size:14px}
+    @media(max-width:900px){.contact-grid,.faq-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Reddr<span>Pulse</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="login.html" class="btn btn-outline">Login</a>
+    <a href="signup.html" class="btn btn-primary">Get Started →</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="section-tag">Contact Us</div>
+    <h1>We're here to help</h1>
+    <p style="max-width:500px;margin:16px auto 0">Have questions? Our team is ready to assist you with anything you need.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get in touch</h3>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">support@reddripulse.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div class="contact-label">Live Chat</div>
+            <div class="contact-value">Available 24/7</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+1 (555) 123-4567</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🏢</div>
+          <div>
+            <div class="contact-label">Office</div>
+            <div class="contact-value">San Francisco, CA</div>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;padding:24px;background:var(--bg2);border-radius:var(--radius)">
+          <h4 style="font-size:16px;margin-bottom:12px">Support Hours</h4>
+          <p style="font-size:14px;color:var(--muted)">Monday - Friday: 9am - 6pm PST<br>Saturday: 10am - 4pm PST<br>Sunday: Closed</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 style="margin-bottom:24px">Send us a message</h3>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" placeholder="Doe">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="john@company.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <select class="form-input">
+              <option>General Inquiry</option>
+              <option>Technical Support</option>
+              <option>Billing Question</option>
+              <option>Feature Request</option>
+              <option>Partnership</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-input" placeholder="How can we help you?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-tag" style="text-align:center">Common Questions</div>
+    <h2 style="text-align:center">Quick answers</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>How do I get started?</h4>
+        <p>Simply sign up for free, enter your website URL, and our AI will analyze your business. You'll see opportunities within minutes.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is there a free trial?</h4>
+        <p>Yes! All paid plans come with a 14-day free trial. No credit card required to start.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I cancel anytime?</h4>
+        <p>Absolutely. You can cancel your subscription at any time with no penalties or hidden fees.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do refunds work?</h4>
+        <p>We offer a 30-day money-back guarantee. Contact our support team for a full refund if you're not satisfied.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="container">
+    <h2>Still have questions?</h2>
+    <p>Our team is ready to help you succeed on Reddit.</p>
+    <a href="signup.html" class="btn btn-primary btn-lg">Get Started Free →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Reddr<span>Pulse</span></a>
+        <p class="footer-tagline">AI-Powered Reddit Organic Marketing Software.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ReddrPulse. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
