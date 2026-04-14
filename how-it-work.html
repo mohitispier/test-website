@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works – ReddrPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header{padding:80px 0 60px;background:var(--bg2);text-align:center}
+    .steps-intro{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative}
+    .steps-intro::before{content:'';position:absolute;top:36px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--orange),rgba(255,69,0,0.2));z-index:0}
+    .step{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 16px}
+    .step-num{width:72px;height:72px;border-radius:50%;background:var(--orange);color:#fff;font-size:28px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:24px;border:5px solid #fff;box-shadow:0 4px 20px rgba(255,69,0,0.3)}
+    .step-title{font-size:20px;font-weight:700;margin-bottom:10px}
+    .step-desc{font-size:15px;color:var(--muted);line-height:1.6}
+    .process-detail{padding:80px 0}
+    .process-step{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
+    .process-step:nth-child(even){direction:rtl}
+    .process-step:nth-child(even)>*{direction:ltr}
+    .process-content .step-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+    .process-content h2{font-size:32px;margin-bottom:16px}
+    .process-content p{font-size:16px;margin-bottom:24px}
+    .process-image{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:40px;display:flex;align-items:center;justify-content:center;min-height:320px}
+    .process-mockup{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:20px;width:100%;max-width:380px}
+    .mockup-header{display:flex;gap:6px;margin-bottom:16px}
+    .mockup-dot{width:10px;height:10px;border-radius:50%;background:var(--border)}
+    .mockup-dot:first-child{background:#ff5f57}
+    .mockup-dot:nth-child(2){background:#febc2e}
+    .mockup-dot:nth-child(3){background:#28c840}
+    .mockup-content{font-size:13px}
+    .mockup-row{padding:10px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
+    .mockup-row:last-child{border:none}
+    .mockup-label{color:var(--muted)}
+    .mockup-value{font-weight:600;color:var(--orange)}
+    .benefits-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 0}
+    .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+    .benefit-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+    .benefit-icon{font-size:32px;margin-bottom:16px}
+    .benefit-title{font-size:18px;font-weight:700;margin-bottom:10px}
+    .benefit-desc{font-size:14px;color:var(--muted);line-height:1.6}
+    .timeline{padding:80px 0}
+    .timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .timeline-item{text-align:center}
+    .timeline-date{font-size:14px;font-weight:700;color:var(--orange);margin-bottom:12px}
+    .timeline-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+    .timeline-card h4{font-size:16px;margin-bottom:8px}
+    .timeline-card p{font-size:14px}
+    @media(max-width:900px){.steps-intro,.process-step{grid-template-columns:1fr}.steps-intro::before{display:none}.process-step:nth-child(even){direction:ltr}.benefits-grid,.timeline-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.benefits-grid,.timeline-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Reddr<span>Pulse</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="how-it-works.html" class="active">How It Works</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="login.html" class="btn btn-outline">Login</a>
+    <a href="signup.html" class="btn btn-primary">Get Started →</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="section-tag">How It Works</div>
+    <h1>Get started in 4 simple steps</h1>
+    <p>From sign-up to your first brand mention in as little as 5 minutes.</p>
+
+    <div class="steps-intro">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Enter Your Website</div>
+        <div class="step-desc">Add your website URL and we automatically analyze your niche, products, and target audience.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Discover Opportunities</div>
+        <div class="step-desc">We scan thousands of Reddit threads to find the best opportunities for your brand.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">AI Generates Content</div>
+        <div class="step-desc">Our AI creates context-aware replies that naturally mention your brand.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">We Post & Boost</div>
+        <div class="step-desc">Your content is posted using trusted accounts and boosted for maximum visibility.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="process-detail">
+  <div class="container">
+    <div class="process-step">
+      <div class="process-content">
+        <div class="step-label">Step 1</div>
+        <h2>Enter Your Website</h2>
+        <p>Simply add your website URL. Our AI automatically analyzes your business to understand your niche, products, services, and target audience. No manual setup required.</p>
+        <ul style="list-style:none">
+          <li style="padding:8px 0;border-bottom:1px solid var(--border)">✓ Automatic niche detection</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--border)">✓ Competitor analysis</li>
+          <li style="padding:8px 0">✓ Brand voice training</li>
+        </ul>
+      </div>
+      <div class="process-image">
+        <div class="process-mockup">
+          <div class="mockup-header"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+          <div class="mockup-content">
+            <div style="margin-bottom:20px">
+              <label style="display:block;font-size:12px;font-weight:600;margin-bottom:8px">Your Website URL</label>
+              <input type="text" value="yoursite.com" style="width:100%;padding:12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px">
+            </div>
+            <div style="padding:12px;background:var(--orange-light);border-radius:8px;font-size:13px">
+              <strong style="color:var(--orange)">✓ Analysis Complete</strong>
+              <p style="margin-top:8px;color:var(--muted)">Detected: B2B SaaS, Marketing Tools<br>Competitors: 12 identified<br>Best subreddits: r/marketing, r/SaaS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-content">
+        <div class="step-label">Step 2</div>
+        <h2>Discover Opportunities</h2>
+        <p>Our system continuously scans Reddit for threads where your potential customers are looking for solutions. We identify opportunities based on relevance, engagement, and ranking potential.</p>
+        <ul style="list-style:none">
+          <li style="padding:8px 0;border-bottom:1px solid var(--border)">✓ Google-ranking threads</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--border)">✓ Trending discussions</li>
+          <li style="padding:8px 0">✓ Competitor mentions</li>
+        </ul>
+      </div>
+      <div class="process-image">
+        <div class="process-mockup">
+          <div class="mockup-header"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+          <div class="mockup-content">
+            <div style="font-size:13px;font-weight:600;margin-bottom:16px">Found Opportunities</div>
+            <div class="mockup-row">
+              <span class="mockup-label">r/marketing</span>
+              <span class="mockup-value" style="color:#2d9d6a">High</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">r/SaaS</span>
+              <span class="mockup-value" style="color:#2d9d6a">High</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">r/startups</span>
+              <span class="mockup-value" style="color:orange">Medium</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">r/Entrepreneur</span>
+              <span class="mockup-value" style="color:var(--orange)">High</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-content">
+        <div class="step-label">Step 3</div>
+        <h2>AI Generates Content</h2>
+        <p>Our AI analyzes each opportunity and generates context-aware, valuable replies that naturally mention your brand without sounding spammy. You can review and edit before posting.</p>
+        <ul style="list-style:none">
+          <li style="padding:8px 0;border-bottom:1px solid var(--border)">✓ Multiple variations</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--border)">✓ Brand voice matching</li>
+          <li style="padding:8px 0">✓ Human-like quality</li>
+        </ul>
+      </div>
+      <div class="process-image">
+        <div class="process-mockup">
+          <div class="mockup-header"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+          <div class="mockup-content">
+            <div style="font-size:13px;font-weight:600;margin-bottom:16px">AI Generated Reply</div>
+            <div style="padding:14px;background:var(--bg2);border-radius:8px;font-size:13px;line-height:1.6">
+              "We've had great success with [Your Brand] for this exact use case. Their automated Reddit marketing tool saved us 10+ hours/week..."
+            </div>
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <button style="flex:1;padding:8px;background:var(--orange);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600">Approve ✓</button>
+              <button style="flex:1;padding:8px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px">Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="process-content">
+        <div class="step-label">Step 4</div>
+        <h2>We Post & Boost</h2>
+        <p>Once approved, your content is posted using our network of trusted, aged Reddit accounts. We also smart-boost your comments to ensure they climb to the top of discussions.</p>
+        <ul style="list:none">
+          <li style="padding:8px 0;border-bottom:1px solid var(--border)">✓ Trusted aged accounts</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--border)">✓ Natural upvoting</li>
+          <li style="padding:8px 0">✓ Maximum visibility</li>
+        </ul>
+      </div>
+      <div class="process-image">
+        <div class="process-mockup">
+          <div class="mockup-header"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+          <div class="mockup-content">
+            <div style="font-size:13px;font-weight:600;margin-bottom:16px">Post Status</div>
+            <div class="mockup-row">
+              <span class="mockup-label">Account</span>
+              <span class="mockup-value">u/MarketingPro_22</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">Karma</span>
+              <span class="mockup-value">15,400</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">Status</span>
+              <span class="mockup-value" style="color:#2d9d6a">Posted ✓</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">Position</span>
+              <span class="mockup-value">#3 of 47</span>
+            </div>
+            <div class="mockup-row">
+              <span class="mockup-label">Upvotes</span>
+              <span class="mockup-value">124 ↑</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="benefits-section">
+  <div class="container">
+    <div class="section-tag" style="text-align:center">Why It Works</div>
+    <h2 style="text-align:center">The ReddrPulse advantage</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <div class="benefit-title">Targeted Reach</div>
+        <div class="benefit-desc">Your brand gets mentioned where buyers are actively looking for solutions — not random subreddits.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🤖</div>
+        <div class="benefit-title">AI-Powered Quality</div>
+        <div class="benefit-desc">Our AI generates responses so natural they pass as authentic user recommendations.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🛡️</div>
+        <div class="benefit-title">Risk-Free Operation</div>
+        <div class="benefit-desc">With our safety score system and aged accounts, ban risk is virtually eliminated.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📈</div>
+        <div class="benefit-title">Proven Results</div>
+        <div class="benefit-desc">200+ businesses already use ReddrPulse to generate consistent leads and sales.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⏱️</div>
+        <div class="benefit-title">Set & Forget</div>
+        <div class="benefit-desc">Once set up, the platform runs 24/7. No manual posting, no managing accounts.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔗</div>
+        <div class="benefit-title">AI LLM Exposure</div>
+        <div class="benefit-desc">Comments on Reddit become recommendations in ChatGPT, Claude, and Gemini.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="timeline">
+  <div class="container">
+    <div class="section-tag" style="text-align:center">Your Timeline</div>
+    <h2 style="text-align:center">What to expect</h2>
+    <div class="timeline-grid">
+      <div class="timeline-item">
+        <div class="timeline-date">Day 1</div>
+        <div class="timeline-card">
+          <h4>Account Setup</h4>
+          <p>Sign up, enter your website, and let AI analyze your business.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Days 2-7</div>
+        <div class="timeline-card">
+          <h4>First Opportunities</h4>
+          <p>Start seeing your first brand mentions and engagement.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Weeks 2-4</div>
+        <div class="timeline-card">
+          <h4>Growth Phase</h4>
+          <p>Build momentum with consistent mentions and climbing visibility.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Month 2+</div>
+        <div class="timeline-card">
+          <h4>Results Scale</h4>
+          <p>Compounding results as your brand becomes a top recommendation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="container">
+    <h2>Ready to get started?</h2>
+    <p>Join 200+ businesses growing their brand on Reddit.</p>
+    <a href="signup.html" class="btn btn-primary btn-lg">Get Started Free →</a>
+    <p class="cta-sub">No credit card required · Takes less than 30 seconds</p>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Reddr<span>Pulse</span></a>
+        <p class="footer-tagline">AI-Powered Reddit Organic Marketing Software.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#why">Why ReddrPulse?</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ReddrPulse. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
