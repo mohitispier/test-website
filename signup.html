@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up – ReddrPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{background:var(--bg2)}
+    .auth-page{min-height:100vh;display:flex;background:var(--bg)}
+    .auth-left{width:50%;background:var(--text);display:flex;align-items:center;justify-content:center;padding:48px;position:relative;overflow:hidden}
+    .auth-left::before{content:'';position:absolute;top:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,69,0,0.3) 0%,transparent 70%)}
+    .auth-left::after{content:'';position:absolute;bottom:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,69,0,0.2) 0%,transparent 70%)}
+    .auth-left-content{position:relative;z-index:1;color:#fff;text-align:center;max-width:400px}
+    .auth-left h2{font-size:36px;margin-bottom:16px;color:#fff}
+    .auth-left p{font-size:16px;opacity:0.7;line-height:1.7}
+    .auth-right{width:50%;display:flex;align-items:center;justify-content:center;padding:48px}
+    .auth-form{max-width:420px;width:100%}
+    .auth-form h1{font-size:28px;margin-bottom:8px}
+    .auth-form .subtitle{font-size:15px;color:var(--muted);margin-bottom:32px}
+    .auth-form .form-group{margin-bottom:20px}
+    .auth-form .form-label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+    .auth-form .form-input{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;background:var(--bg)}
+    .auth-form .form-input:focus{outline:none;border-color:var(--orange)}
+    .auth-form .btn-primary{width:100%;padding:16px;font-size:16px;margin-top:8px}
+    .auth-divider{display:flex;align-items:center;gap:16px;margin:24px 0;color:var(--muted);font-size:13px}
+    .auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border)}
+    .social-btns{display:flex;flex-direction:column;gap:12px}
+    .social-btn{width:100%;padding:14px;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);font-size:15px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px}
+    .social-btn:hover{border-color:var(--orange)}
+    .auth-footer{text-align:center;margin-top:24px;font-size:14px;color:var(--muted)}
+    .auth-footer a{color:var(--orange);font-weight:600}
+    .benefits-list{text-align:left;margin:24px 0}
+    .benefits-list li{padding:8px 0;font-size:14px;color:rgba(255,255,255,0.8);display:flex;align-items:center;gap:10px}
+    .benefits-list li::before{content:'✓';color:var(--orange);font-weight:700}
+    @media(max-width:900px){.auth-page{flex-direction:column}.auth-left,.auth-right{width:100%}.auth-left{padding:60px 24px}.auth-right{padding:40px 24px}}
+  </style>
+</head>
+<body>
+
+<div class="auth-page">
+  <div class="auth-left">
+    <div class="auth-left-content">
+      <a href="index.html" class="logo" style="font-size:28px;margin-bottom:24px;display:inline-block;color:#fff">Reddr<span>Pulse</span></a>
+      <h2>Start growing on Reddit for free</h2>
+      <p>Join 200+ businesses and get your brand mentioned on Reddit today.</p>
+      <ul class="benefits-list">
+        <li>No credit card required</li>
+        <li>14-day free trial of Pro features</li>
+        <li>Access to all core features</li>
+        <li>5 free comments per month</li>
+        <li>24/7 support</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="auth-right">
+    <div class="auth-form">
+      <h1>Create your account</h1>
+      <p class="subtitle">Start your free trial in less than 30 seconds</p>
+
+      <form>
+        <div class="form-group">
+          <label class="form-label">Website URL</label>
+          <input type="url" class="form-input" placeholder="https://yoursite.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Work Email</label>
+          <input type="email" class="form-input" placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" placeholder="Create a strong password">
+        </div>
+        <div class="form-group">
+          <label style="display:flex;align-items:center;gap:10px;font-size:14px">
+            <input type="checkbox" style="width:18px;height:18px;accent-color:var(--orange)">
+            I agree to the <a href="#" style="color:var(--orange)">Terms of Service</a> and <a href="#" style="color:var(--orange)">Privacy Policy</a>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Account →</button>
+      </form>
+
+      <div class="auth-divider">or sign up with</div>
+
+      <div class="social-btns">
+        <button class="social-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.9 9.2c0-.6 0-1.1-.1-1.7H9v3.2h5c-.2 1.1-1 2-2.1 2.6v2.2h3.4c2-1.9 3.2-4.7 3.2-8.3z"/><path fill="#34A853" d="M9 18c2.7 0 4.9-.9 6.6-2.4l-3.4-2.2c-.9.6-2 .9-3.2.9-2.4 0-4.5-1.6-5.3-3.8H.9v2.3C2.6 15.8 5.6 18 9 18z"/><path fill="#FBBC05" d="M3.7 10.7c-.2-.6-.3-1.3-.3-2.1s.1-1.5.3-2.1V4.2H.9C.2 5.6 0 7 0 8.6s.2 3 .9 4.4l2.8-2.3z"/><path fill="#EA4335" d="M9 3.6c1.4 0 2.6.5 3.5 1.4l2.9-2.9C13.9.9 11.7 0 9 0 5.6 2.1 2.6 4.2.9 6.2v2.3C2.6 5.8 5.6 3.6 9 3.6z"/></svg>
+          Continue with Google
+        </button>
+        <button class="social-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="#333"><path d="M9 0C4 0 0 4 0 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 16.2c-4 0-7.2-3.2-7.2-7.2S5 1.8 9 1.8s7.2 3.2 7.2 7.2-3.2 7.2-7.2 7.2z"/></svg>
+          Continue with Microsoft
+        </button>
+      </div>
+
+      <p class="auth-footer">Already have an account? <a href="login.html">Sign in</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
