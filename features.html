@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features – ReddrPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header{padding:80px 0 60px;background:var(--bg2);text-align:center}
+    .page-header h1{font-size:clamp(32px,4vw,48px);margin-bottom:16px}
+    .page-header p{font-size:18px;max-width:600px;margin:0 auto}
+    .features-category{margin-bottom:60px}
+    .features-category h2{margin-bottom:8px;padding-bottom:12px;border-bottom:2px solid var(--orange)}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+    .feat-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .25s}
+    .feat-card:hover{border-color:rgba(255,69,0,0.35);transform:translateY(-4px);box-shadow:0 12px 36px rgba(255,69,0,0.08)}
+    .feat-img{width:52px;height:52px;border-radius:12px;background:var(--orange-light);border:1px solid rgba(255,69,0,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+    .feat-name{font-size:17px;font-weight:700;margin-bottom:8px}
+    .feat-desc{font-size:14px;color:var(--muted);line-height:1.65}
+    .integrations{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 0}
+    .integration-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:40px}
+    .integration-item{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center}
+    .integration-icon{font-size:32px;margin-bottom:12px}
+    .integration-name{font-size:14px;font-weight:600}
+    @media(max-width:900px){.features-grid,.integration-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.features-grid,.integration-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Reddr<span>Pulse</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="features.html" class="active">Features</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="login.html" class="btn btn-outline">Login</a>
+    <a href="signup.html" class="btn btn-primary">Get Started →</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="section-tag">Features</div>
+    <h1>Everything you need to dominate Reddit</h1>
+    <p>One platform to find, engage, monitor, and convert Reddit conversations into customers — on autopilot.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="features-category">
+      <h2>🔍 Discovery & Research</h2>
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-img">🎯</div>
+          <div class="feat-name">Google-Ranking Thread Finder</div>
+          <div class="feat-desc">Discover Reddit posts that already rank on Google and drive traffic. Comment there to position your brand where demand already exists.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🔥</div>
+          <div class="feat-name">Trending Opportunity Finder</div>
+          <div class="feat-desc">Find new Reddit posts where buyers are actively looking for solutions — and engage while visibility is at its peak.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🔎</div>
+          <div class="feat-name">Keyword Monitoring</div>
+          <div class="feat-desc">Monitor specific keywords across Reddit to catch relevant conversations the moment they happen.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">📊</div>
+          <div class="feat-name">Competitor Tracking</div>
+          <div class="feat-desc">Track when your competitors get mentioned on Reddit and identify opportunities to join the conversation.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🏆</div>
+          <div class="feat-name">Subreddit Analytics</div>
+          <div class="feat-desc">Get deep insights into subreddit performance, engagement rates, and best times to post.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">📈</div>
+          <div class="feat-name">Trend Prediction</div>
+          <div class="feat-desc">AI-powered predictions of trending topics before they go viral so you can engage early.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-category">
+      <h2>🤖 AI-Powered Engagement</h2>
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-img">🤖</div>
+          <div class="feat-name">AI Reply Generator</div>
+          <div class="feat-desc">Generate context-aware, non-spammy replies that add real value to the conversation and naturally mention your brand.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">✍️</div>
+          <div class="feat-name">Multi-Variant Creation</div>
+          <div class="feat-desc">Generate multiple reply variations and choose the best one for your brand voice and tone.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🎨</div>
+          <div class="feat-name">Brand Voice Customization</div>
+          <div class="feat-desc">Train the AI on your brand voice so every reply sounds authentically you.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🌐</div>
+          <div class="feat-name">Multi-Language Support</div>
+          <div class="feat-desc">Generate replies in multiple languages to engage with Reddit communities worldwide.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">📝</div>
+          <div class="feat-name">Post Generator</div>
+          <div class="feat-desc">Create engaging Reddit posts optimized for your target subreddit and audience.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">📄</div>
+          <div class="feat-name">Content Repurposing</div>
+          <div class="feat-desc">Turn your blog posts, newsletters, or ads into Reddit-ready content automatically.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-category">
+      <h2>👥 Account Management</h2>
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-img">👤</div>
+          <div class="feat-name">Trusted Aged Accounts</div>
+          <div class="feat-desc">Access our network of established Reddit accounts with genuine karma that stay under the moderation radar.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🔄</div>
+          <div class="feat-name">Account Rotation</div>
+          <div class="feat-desc">Automatically rotate between accounts to maximize reach while minimizing ban risk.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🛡️</div>
+          <div class="feat-name">Safety Score System</div>
+          <div class="feat-desc">Built-in safety scoring that warns you before actions that might trigger Reddit's spam filters.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">📱</div>
+          <div class="feat-name">IP & Proxy Management</div>
+          <div class="feat-desc">Each account comes with dedicated IPs and proxy management — no setup required.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">⏰</div>
+          <div class="feat-name">Account Warm-Up</div>
+          <div class="feat-desc">Accounts are pre-warmed and ready to use — no waiting 2-4 weeks for activation.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">➕</div>
+          <div class="feat-name">Bring Your Own Accounts</div>
+          <div class="feat-desc">Import and manage your existing Reddit accounts alongside our trusted network.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-category">
+      <h2>⬆️ Engagement Boosting</h2>
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-img">⬆️</div>
+          <div class="feat-name">Smart Comment Boosting</div>
+          <div class="feat-desc">Boost comments naturally so they climb to the top of discussions without triggering spam filters.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">💬</div>
+          <div class="feat-name">Multi-Thread Building</div>
+          <div class="feat-desc">Build full comment threads instead of single comments that look out of place.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🎯</div>
+          <div class="feat-name">Targeted Upvoting</div>
+          <div class="feat-desc">Smart upvoting that targets engaged users likely to upvote quality content.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">⏱️</div>
+          <div class="feat-name">Post Scheduling</div>
+          <div class="feat-desc">Schedule posts and comments to publish at optimal times for maximum engagement.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🔁</div>
+          <div class="feat-name">Automated Follow-Ups</div>
+          <div class="feat-desc">Automatically follow up on comments to keep conversations going and boost visibility.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">👁️</div>
+          <div class="feat-name">View Bot Protection</div>
+          <div class="feat-desc">Add views to your posts to trigger Reddit's viral algorithm and boost organic reach.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-category">
+      <h2>🧠 AI & LLM Features</h2>
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-img">🧠</div>
+          <div class="feat-name">Rank on AI LLMs</div>
+          <div class="feat-desc">Place comments on Reddit and become a top recommendation in ChatGPT, Gemini, and Claude answers.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🎯</div>
+          <div class="feat-name">AI Answer Targeting</div>
+          <div class="feat-desc">Find questions that LLMs are likely to cite Reddit for and position your brand there.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">📚</div>
+          <div class="feat-name">Knowledge Base Integration</div>
+          <div class="feat-desc">Feed your product documentation to AI to generate more accurate, helpful replies.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-category">
+      <h2>📊 Analytics & Reporting</h2>
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-img">📊</div>
+          <div class="feat-name">Comprehensive Analytics</div>
+          <div class="feat-desc">Track comment visibility, ranking position, traffic captured, and ROI per subreddit.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">📈</div>
+          <div class="feat-name">ROI Tracking</div>
+          <div class="feat-desc">Measure the revenue impact of your Reddit marketing efforts with custom attribution.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">📧</div>
+          <div class="feat-name">Weekly Reports</div>
+          <div class="feat-desc">Get automated weekly reports summarizing your Reddit performance and opportunities.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🔗</div>
+          <div class="feat-name">UTM Tracking</div>
+          <div class="feat-desc">Auto-generate UTM-tagged links to track Reddit traffic in Google Analytics.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">📉</div>
+          <div class="feat-name">Competitor Insights</div>
+          <div class="feat-desc">See how your competitors are performing on Reddit and benchmark your results.</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-img">🔔</div>
+          <div class="feat-name">Real-Time Alerts</div>
+          <div class="feat-desc">Get notified instantly when your brand gets mentioned or when new opportunities arise.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="integrations">
+  <div class="container">
+    <div class="section-tag" style="text-align:center">Integrations</div>
+    <h2 style="text-align:center">Works with your stack</h2>
+    <div class="integration-grid">
+      <div class="integration-item"><div class="integration-icon">📊</div><div class="integration-name">Google Analytics</div></div>
+      <div class="integration-item"><div class="integration-icon">📈</div><div class="integration-name">HubSpot</div></div>
+      <div class="integration-item"><div class="integration-icon">💬</div><div class="integration-name">Slack</div></div>
+      <div class="integration-item"><div class="integration-icon">📧</div><div class="integration-name">Mailchimp</div></div>
+      <div class="integration-item"><div class="integration-icon">🔗</div><div class="integration-name">Zapier</div></div>
+      <div class="integration-item"><div class="integration-icon">🔌</div><div class="integration-name">API Access</div></div>
+    </div>
+  </div>
+</div>
+
+<section style="padding:80px 0">
+  <div class="container" style="text-align:center">
+    <h2>Ready to dominate Reddit?</h2>
+    <p style="margin:16px auto 32px;max-width:500px">Join 200+ businesses already using ReddrPulse to grow their brand.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="signup.html" class="btn btn-primary btn-lg">Get Started Free →</a>
+      <a href="contact.html" class="btn btn-outline btn-lg">Talk to Sales</a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="container">
+    <h2>Start growing your brand on Reddit</h2>
+    <p>No manual searching, commenting, or managing accounts.</p>
+    <a href="signup.html" class="btn btn-primary btn-lg">Get Started For Free →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Reddr<span>Pulse</span></a>
+        <p class="footer-tagline">AI-Powered Reddit Organic Marketing Software.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#why">Why ReddrPulse?</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ReddrPulse. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
