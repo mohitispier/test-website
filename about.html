@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – ReddrPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header{padding:80px 0 60px;background:var(--bg2);text-align:center}
+    .story-section{padding:80px 0}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .story-content h2{font-size:36px;margin-bottom:20px}
+    .story-content p{font-size:16px;line-height:1.8;margin-bottom:16px}
+    .story-image{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);height:400px;display:flex;align-items:center;justify-content:center}
+    .story-image span{font-size:80px}
+    .values-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 0}
+    .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .value-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center}
+    .value-icon{font-size:40px;margin-bottom:16px}
+    .value-title{font-size:18px;font-weight:700;margin-bottom:10px}
+    .value-desc{font-size:14px;color:var(--muted);line-height:1.6}
+    .team-section{padding:80px 0}
+    .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .team-card{text-align:center}
+    .team-avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#ff8c42);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;color:#fff}
+    .team-name{font-size:18px;font-weight:700;margin-bottom:4px}
+    .team-role{font-size:14px;color:var(--orange);margin-bottom:8px}
+    .team-bio{font-size:14px;color:var(--muted);line-height:1.6}
+    .stats-section{padding:80px 0;background:var(--text);color:#fff}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:48px}
+    .stat-item{text-align:center}
+    .stat-num{font-size:52px;font-weight:900;color:var(--orange)}
+    .stat-label{font-size:16px;opacity:0.8}
+    @media(max-width:900px){.story-grid,.values-grid,.team-grid,.stats-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.story-grid,.values-grid,.team-grid,.stats-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Reddr<span>Pulse</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="login.html" class="btn btn-outline">Login</a>
+    <a href="signup.html" class="btn btn-primary">Get Started →</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="section-tag">About Us</div>
+    <h1>We're on a mission to democratize Reddit marketing</h1>
+    <p style="max-width:600px;margin:16px auto 0">ReddrPulse was built to help businesses of all sizes tap into the power of Reddit without the complexity, risk, and cost of doing it manually.</p>
+  </div>
+</div>
+
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-content">
+        <h2>Our Story</h2>
+        <p>ReddrPulse was founded in 2024 by a team of growth marketers who were frustrated by how difficult it was to scale Reddit marketing. We saw thousands of businesses leaving money on the table because Reddit marketing was too manual, too risky, and too expensive.</p>
+        <p>We built ReddrPulse to solve these problems: AI-powered content generation, trusted aged accounts, smart engagement boosting, and comprehensive analytics — all in one platform.</p>
+        <p>Today, we're proud to help 200+ businesses grow their brands on Reddit, generate consistent leads, and show up in AI answers worldwide.</p>
+      </div>
+      <div class="story-image">
+        <span>🚀</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="values-section">
+  <div class="container">
+    <div class="section-tag" style="text-align:center">Our Values</div>
+    <h2 style="text-align:center">What drives us</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <div class="value-title">Customer First</div>
+        <div class="value-desc">We measure our success by our customers' results, not our own vanity metrics.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <div class="value-title">Simplicity</div>
+        <div class="value-desc">Complex Reddit marketing shouldn't require a PhD. We make it simple.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <div class="value-title">Trust & Safety</div>
+        <div class="value-desc">We built our platform to keep accounts safe and results sustainable.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💡</div>
+        <div class="value-title">Innovation</div>
+        <div class="value-desc">We're constantly improving our AI and adding new features to stay ahead.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="stats-section">
+  <div class="container">
+    <h2 style="text-align:center;color:#fff">By the numbers</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Active Customers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1M+</div>
+        <div class="stat-label">Comments Posted</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">50K+</div>
+        <div class="stat-label">Leads Generated</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">99.9%</div>
+        <div class="stat-label">Uptime</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="team-section">
+  <div class="container">
+    <div class="section-tag" style="text-align:center">Our Team</div>
+    <h2 style="text-align:center">Meet the people behind ReddrPulse</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">AK</div>
+        <div class="team-name">Alex Kim</div>
+        <div class="team-role">CEO & Co-Founder</div>
+        <div class="team-bio">Former growth lead at Stripe. 10+ years in B2B SaaS marketing.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SJ</div>
+        <div class="team-name">Sarah Johnson</div>
+        <div class="team-role">CTO & Co-Founder</div>
+        <div class="team-bio">Ex-Google ML engineer. AI/ML specialist with a passion for automation.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">MR</div>
+        <div class="team-name">Mike Rodriguez</div>
+        <div class="team-role">Head of Product</div>
+        <div class="team-bio">Built products at HubSpot and Mailchimp. UX obsessive.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">EL</div>
+        <div class="team-name">Emily Liu</div>
+        <div class="team-role">Head of Customer Success</div>
+        <div class="team-bio">Previously led CS at two SaaS unicorns. Customer advocate.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="container">
+    <h2>Join our mission</h2>
+    <p>Help us make Reddit marketing accessible to every business.</p>
+    <a href="signup.html" class="btn btn-primary btn-lg">Get Started Free →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Reddr<span>Pulse</span></a>
+        <p class="footer-tagline">AI-Powered Reddit Organic Marketing Software.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ReddrPulse. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
