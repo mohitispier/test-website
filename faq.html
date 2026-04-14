@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ – ReddrPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header{padding:80px 0 60px;background:var(--bg2);text-align:center}
+    .faq-categories{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+    .category-btn{padding:10px 24px;border:1px solid var(--border);border-radius:100px;background:var(--bg);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s}
+    .category-btn:hover,.category-btn.active{border-color:var(--orange);background:var(--orange-light);color:var(--orange)}
+    .faq-section{padding:60px 0}
+    .faq-section h2{margin-bottom:32px}
+    .faq-grid{columns:2;column-gap:40px}
+    .faq-item{break-inside:avoid;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:16px;padding:24px}
+    .faq-question{font-size:16px;font-weight:700;margin-bottom:12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .faq-question::after{content:'+';font-size:20px;color:var(--orange)}
+    .faq-item.active .faq-question::after{content:'-'}
+    .faq-answer{font-size:14px;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s}
+    .faq-item.active .faq-answer{max-height:300px}
+    .help-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 0;text-align:center}
+    .help-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+    .help-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+    .help-icon{font-size:32px;margin-bottom:16px}
+    .help-title{font-size:18px;font-weight:700;margin-bottom:8px}
+    .help-desc{font-size:14px;color:var(--muted);margin-bottom:16px}
+    @media(max-width:900px){.faq-grid{columns:1}.help-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Reddr<span>Pulse</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="login.html" class="btn btn-outline">Login</a>
+    <a href="signup.html" class="btn btn-primary">Get Started →</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="section-tag">FAQ</div>
+    <h1>Frequently Asked Questions</h1>
+    <p style="max-width:500px;margin:16px auto 0">Got questions? We've got answers. Can't find what you're looking for? Contact our support team.</p>
+
+    <div class="faq-categories">
+      <button class="category-btn active">All</button>
+      <button class="category-btn">Getting Started</button>
+      <button class="category-btn">Features</button>
+      <button class="category-btn">Pricing</button>
+      <button class="category-btn">Technical</button>
+    </div>
+  </div>
+</div>
+
+<section class="faq-section">
+  <div class="container">
+    <h2>Getting Started</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">How do I get started with ReddrPulse?</div>
+        <div class="faq-answer">Simply sign up for free, enter your website URL, and our AI will automatically analyze your business. You'll start seeing opportunities within minutes. No credit card required.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What information do I need to provide?</div>
+        <div class="faq-answer">Just your website URL. Our AI will analyze your site to understand your niche, products, and target audience. You can also add details about your brand voice for more personalized content.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How long does it take to see results?</div>
+        <div class="faq-answer">Most users see their first brand mentions within 24-48 hours. Significant results typically appear within 2-4 weeks of consistent use.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need Reddit accounts?</div>
+        <div class="faq-answer">No! ReddrPulse provides access to our network of trusted, aged Reddit accounts. You don't need to buy or manage any accounts yourself.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <h2>Features & Capabilities</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">What exactly does ReddrPulse do?</div>
+        <div class="faq-answer">ReddrPulse finds Reddit threads where your potential customers are looking for solutions, generates AI-powered responses that naturally mention your brand, and posts them using our trusted accounts. It also boosts engagement to maximize visibility.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How does the AI generate comments?</div>
+        <div class="faq-answer">Our AI analyzes each thread's context and generates multiple response variations that are helpful, relevant, and match your brand voice. You can review and approve each comment before posting.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I customize the AI's output?</div>
+        <div class="faq-answer">Yes! You can train the AI on your brand voice, specify tone preferences, and even create custom response templates for different scenarios.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What subreddits does ReddrPulse target?</div>
+        <div class="faq-answer">We automatically identify the most relevant subreddits for your niche. You can also add custom subreddits to target and exclude any that don't fit your strategy.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How does the boosting feature work?</div>
+        <div class="faq-answer">Our smart boosting system upvoted your comments naturally to help them climb to the top of discussions. It's designed to trigger Reddit's algorithm without triggering spam filters.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I track my results?</div>
+        <div class="faq-answer">Yes! The dashboard shows total comments, brand mentions, upvotes, click-throughs, and ROI. You can also set up weekly automated reports.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <h2>Pricing & Billing</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">Is there a free plan?</div>
+        <div class="faq-answer">Yes! Our Starter plan is free forever. You get access to core features and pay-per-task for comments, posts, and upvotes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What happens in the free trial?</div>
+        <div class="faq-answer">All paid plans come with a 14-day free trial. You get full access to all features with no credit card required.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I change my plan later?</div>
+        <div class="faq-answer">Absolutely! You can upgrade or downgrade anytime. When upgrading, you get immediate access to new features.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you offer refunds?</div>
+        <div class="faq-answer">Yes, we offer a 30-day money-back guarantee. Contact our support team for a full refund if you're not satisfied.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What payment methods do you accept?</div>
+        <div class="faq-answer">We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for annual plans.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <h2>Technical & Security</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">Is my data secure?</div>
+        <div class="faq-answer">Absolutely. We use industry-standard encryption and never share your data. Your brand information and analytics are 100% private.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Will my accounts get banned?</div>
+        <div class="faq-answer">Our accounts are pre-warmed, have genuine karma, and use dedicated IPs. Combined with our safety score system, ban risk is virtually eliminated.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you offer an API?</div>
+        <div class="faq-answer">Yes! Our Max plan includes full API access. Contact our sales team for custom API solutions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What integrations do you support?</div>
+        <div class="faq-answer">We integrate with Google Analytics, HubSpot, Slack, Mailchimp, and Zapier. More integrations coming soon!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="help-section">
+  <div class="container">
+    <h2>Still need help?</h2>
+    <p style="margin:16px auto 0;max-width:500px">Our support team is ready to assist you with any questions.</p>
+    <div class="help-grid">
+      <div class="help-card">
+        <div class="help-icon">💬</div>
+        <div class="help-title">Live Chat</div>
+        <div class="help-desc">Chat with our team in real-time</div>
+        <a href="contact.html" class="btn btn-primary">Start Chat</a>
+      </div>
+      <div class="help-card">
+        <div class="help-icon">📧</div>
+        <div class="help-title">Email Support</div>
+        <div class="help-desc">Get a response within 24 hours</div>
+        <a href="contact.html" class="btn btn-outline">Email Us</a>
+      </div>
+      <div class="help-card">
+        <div class="help-icon">📚</div>
+        <div class="help-title">Help Center</div>
+        <div class="help-desc">Browse our knowledge base</div>
+        <a href="#" class="btn btn-outline">Visit Help Center</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Reddr<span>Pulse</span></a>
+        <p class="footer-tagline">AI-Powered Reddit Organic Marketing Software.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ReddrPulse. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      question.parentElement.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>
