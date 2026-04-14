@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – ReddrPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header{padding:80px 0 60px;background:var(--bg2);text-align:center}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+    .blog-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .25s}
+    .blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.1)}
+    .blog-image{height:200px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:56px}
+    .blog-content{padding:24px}
+    .blog-category{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--orange)}
+    .blog-title{font-size:18px;font-weight:700;margin:10px 0 12px;line-height:1.4}
+    .blog-title a{text-decoration:none}
+    .blog-title a:hover{color:var(--orange)}
+    .blog-meta{font-size:13px;color:#aaa;display:flex;gap:16px}
+    .blog-excerpt{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+    .blog-readmore{font-size:14px;font-weight:600;color:var(--orange)}
+    .categories{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+    .category-btn{padding:8px 20px;border:1px solid var(--border);border-radius:100px;background:var(--bg);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s}
+    .category-btn:hover,.category-btn.active{border-color:var(--orange);background:var(--orange-light);color:var(--orange)}
+    @media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Reddr<span>Pulse</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="login.html" class="btn btn-outline">Login</a>
+    <a href="signup.html" class="btn btn-primary">Get Started →</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="section-tag">Blog</div>
+    <h1>Latest insights on Reddit marketing</h1>
+    <p style="max-width:500px;margin:16px auto 0">Tips, strategies, and guides to help you grow your brand on Reddit.</p>
+
+    <div class="categories">
+      <button class="category-btn active">All</button>
+      <button class="category-btn">Strategies</button>
+      <button class="category-btn">Case Studies</button>
+      <button class="category-btn">Tips & Tricks</button>
+      <button class="category-btn">Industry News</button>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-image">📈</div>
+        <div class="blog-content">
+          <div class="blog-category">Strategies</div>
+          <h2 class="blog-title"><a href="blog-post.html">How to Get Your Brand Mentioned on Reddit in 2026</a></h2>
+          <p class="blog-excerpt">A comprehensive guide to Reddit marketing strategies that actually work in 2026. Learn how to find the right threads and engage authentically.</p>
+          <div class="blog-meta">
+            <span>5 min read</span>
+            <span>Apr 10, 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">🎯</div>
+        <div class="blog-content">
+          <div class="blog-category">Case Studies</div>
+          <h2 class="blog-title"><a href="blog-post.html">How SocialBoost Generated 30% More Leads with ReddrPulse</a></h2>
+          <p class="blog-excerpt">Learn how one SaaS company used Reddit marketing to increase their leads by 30% in just 3 months.</p>
+          <div class="blog-meta">
+            <span>7 min read</span>
+            <span>Apr 5, 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">🧠</div>
+        <div class="blog-content">
+          <div class="blog-category">Industry News</div>
+          <h2 class="blog-title"><a href="blog-post.html">Why Reddit is Now the #1 Source for AI Answers</a></h2>
+          <p class="blog-excerpt">New research shows Reddit is cited in 40% of LLM responses. Here's what this means for your marketing.</p>
+          <div class="blog-meta">
+            <span>4 min read</span>
+            <span>Mar 28, 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">💡</div>
+        <div class="blog-content">
+          <div class="blog-category">Tips & Tricks</div>
+          <h2 class="blog-title"><a href="blog-post.html">10 Reddit Marketing Mistakes to Avoid</a></h2>
+          <p class="blog-excerpt">Don't let these common mistakes ruin your Reddit marketing efforts. Learn what to avoid and how to succeed.</p>
+          <div class="blog-meta">
+            <span>6 min read</span>
+            <span>Mar 20, 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">📊</div>
+        <div class="blog-content">
+          <div class="blog-category">Strategies</div>
+          <h2 class="blog-title"><a href="blog-post.html">Finding the Best Subreddits for Your Niche</a></h2>
+          <p class="blog-excerpt">A step-by-step guide to finding and targeting the most valuable subreddits for your business.</p>
+          <div class="blog-meta">
+            <span>8 min read</span>
+            <span>Mar 15, 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">🚀</div>
+        <div class="blog-content">
+          <div class="blog-category">Case Studies</div>
+          <h2 class="blog-title"><a href="blog-post.html">From $0 to $20K/Month Using Only Reddit</a></h2>
+          <p class="blog-excerpt">How one founder replaced paid ads entirely with strategic Reddit marketing.</p>
+          <div class="blog-meta">
+            <span>5 min read</span>
+            <span>Mar 10, 2026</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="container">
+    <h2>Ready to start your Reddit marketing journey?</h2>
+    <p>Get started for free and see results in as little as 7 days.</p>
+    <a href="signup.html" class="btn btn-primary btn-lg">Get Started Free →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Reddr<span>Pulse</span></a>
+        <p class="footer-tagline">AI-Powered Reddit Organic Marketing Software.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ReddrPulse. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
